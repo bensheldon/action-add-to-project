@@ -1,22 +1,26 @@
-workflow "Add PRs to Project Board" {
-  resolves = ["Add to Project Board"]
+workflow "On Pull Request" {
+  resolves = ["Add PR to Project Board"]
   on = "pull_request"
 }
 
-action "Add to Project Board" {
-  uses = "./"
+action "Add PR to Project Board" {
+  uses = "bensheldon/action-add-to-project@master"
   secrets = ["GITHUB_TOKEN"]
   env = {
     COLUMN_ID = "5199778"
   }
 }
 
-workflow "Add Issues to Project Board" {
-  resolves = ["Add "]
-  on = "issues"
+workflow "On Issue" {
+  resolves = ["Add Issue to Project Board"]
+  on = "issue"
 }
 
-action "Add " {
-  uses = "./"
+action "Add Issue to Project Board" {
+  uses = "bensheldon/action-add-to-project@master"
   secrets = ["GITHUB_TOKEN"]
+  env = {
+    COLUMN_ID = "5199778"
+  }
 }
+
