@@ -1,10 +1,6 @@
-require 'bundler/inline'
-
-gemfile do
-  source 'https://rubygems.org'
-  gem "json", "~> 2.2.0"
-  gem "octokit", "~> 4.14.0"
-end
+require 'rubygems'
+require 'bundler/setup'
+Bundler.require(:default)
 
 GITHUB_TOKEN = ENV.fetch('GITHUB_TOKEN')
 COLUMN_ID = ENV.fetch('COLUMN_ID')
