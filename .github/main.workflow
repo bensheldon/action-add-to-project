@@ -1,6 +1,6 @@
-workflow "Add PRs Project Board" {
-  on = "pull_request"
+workflow "Add PRs to Project Board" {
   resolves = ["Add to Project Board"]
+  on = "pull_request"
 }
 
 action "Add to Project Board" {
@@ -12,8 +12,8 @@ action "Add to Project Board" {
 }
 
 workflow "Add Issues to Project Board" {
-  on = "issues"
   resolves = ["Add "]
+  on = "issues"
 }
 
 action "Add " {
