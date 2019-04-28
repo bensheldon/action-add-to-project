@@ -1,9 +1,11 @@
 FROM ruby:2.6.0
 
-LABEL "com.github.actions.name"="Default PR Project Board"
-LABEL "com.github.actions.description"="Adds new Pull Requests to Project Board"
-LABEL "com.github.actions.icon"="grid"
+LABEL "com.github.actions.name"="Add to Project Board"
+LABEL "com.github.actions.description"="Adds Issues and Pull Requests to a Project Board"
+LABEL "com.github.actions.icon"="columns"
 LABEL "com.github.actions.color"="gray-dark"
+LABEL "com.github.actions.repository"="https://github.com/bensheldon/action-add-to-project"
+LABEL "com.github.actions.maintainer"="Ben Sheldon <bensheldon@gmail.com>"
 
 RUN apt-get update -qq
 RUN gem install bundler:2
