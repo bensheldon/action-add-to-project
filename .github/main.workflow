@@ -4,7 +4,7 @@ workflow "On Pull Request" {
 }
 
 action "Add PR to Project Board" {
-  uses = "bensheldon/action-add-to-project@master"
+  uses = "./"
   secrets = ["GITHUB_TOKEN"]
   env = {
     COLUMN_ID = "5199778"
@@ -13,11 +13,11 @@ action "Add PR to Project Board" {
 
 workflow "On Issue" {
   resolves = ["Add Issue to Project Board"]
-  on = "issue"
+  on = "issues"
 }
 
 action "Add Issue to Project Board" {
-  uses = "bensheldon/action-add-to-project@master"
+  uses = "./"
   secrets = ["GITHUB_TOKEN"]
   env = {
     COLUMN_ID = "5199778"
