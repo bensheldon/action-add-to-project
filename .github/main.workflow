@@ -10,3 +10,13 @@ action "Add to Project Board" {
     COLUMN_ID = "5199778"
   }
 }
+
+workflow "Add Issues to Project Board" {
+  on = "issues"
+  resolves = ["Add "]
+}
+
+action "Add " {
+  uses = "./"
+  secrets = ["GITHUB_TOKEN"]
+}
