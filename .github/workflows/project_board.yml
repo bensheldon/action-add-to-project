@@ -1,0 +1,17 @@
+name: Add to Project Board
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened]
+jobs:
+  add_to_column:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Add to Column
+        uses: ./
+        with:
+          column_id: "5199778"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

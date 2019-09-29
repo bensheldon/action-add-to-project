@@ -2,18 +2,23 @@
 Github Action to add Pull Requests or Issues to Github Project Boards
 
 ```
-workflow "Add PRs Project Board" {
-  on = "pull_request"
-  resolves = ["Add to Project Board"]
-}
-
-action "Add to Project Board" {
-  uses = ["bensheldon/action-add-to-project@master"]
-  secrets = ["GITHUB_TOKEN"]
-  env = {
-    COLUMN_ID = "5199778"
-  }
-}
+name: Add Issues and PRs to Project Board
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened]
+jobs:
+  add_to_column:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Add to Column
+        uses: "bensheldon/action-add-to-project@master"
+        with:
+          column_id: "9999999"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 ## Development
