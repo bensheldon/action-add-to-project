@@ -5,5 +5,5 @@ inputs:
     description: 'Column ID of Project Board'
     required: true
 runs:
-  using: docker
-  image: "docker://docker.pkg.github.com/bensheldon/action-add-to-project/action-add-to-project:latest"
+  using: 'docker'
+  image: 'docker.pkg.github.com/bensheldon/action-add-to-project/action-add-to-project:latest'
