@@ -1,0 +1,9 @@
+name: 'Add to Project Board'
+description: 'Adds new Issues and Pull Requests to a Project Board'
+inputs:
+  column_id:
+    description: 'Column ID of Project Board'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
